@@ -20,6 +20,13 @@ let dayInputErrorMsg = document.querySelector(".day-input-error-msg");
 let monthInputErrorMsg = document.querySelector(".month-input-error-msg");
 let yearInputErrorMsg = document.querySelector(".year-input-error-msg");
 
+// get label and border for error style
+let dayLabel = document.querySelector(".day-label");
+let monthLabel = document.querySelector(".month-label");
+let yearLabel = document.querySelector(".year-label");
+
+
+
 
 let fieldRequiredText = "This field is required"; // blank input error
 let validInput = "Must be a valid "; // invalid input error
@@ -37,14 +44,17 @@ submit.addEventListener('click', () => {
     if (dayInput.value === "") {
         dayInputErrorMsg.style.display = "block";
         dayInputErrorMsg.textContent = fieldRequiredText;
+        dayLabel.style.color = "hsl(0, 100%, 67%)";
         dayValid = false;
     } else if (dayInput.value > 31 || dayInput.value < 1    ) {
         dayInputErrorMsg.style.display = "block";
         dayInputErrorMsg.textContent = validInput + "day";
+        dayLabel.style.color = "hsl(0, 100%, 67%)";
         dayValid = false;
     } else {
         dayValid = true;
         dayInputErrorMsg.style.display = "none"; // hide error message
+        dayLabel.style.color = "hsl(0, 1%, 44%)";
     }
 
 
@@ -52,28 +62,34 @@ submit.addEventListener('click', () => {
     if (monthInput.value === "") {
         monthInputErrorMsg.style.display = "block";
         monthInputErrorMsg.textContent = fieldRequiredText;
+        monthLabel.style.color = "hsl(0, 100%, 67%)";
         monthValid = false;
     } else if (monthInput.value > 12 || monthInput.value < 1) {
         monthInputErrorMsg.style.display = "block";
         monthInputErrorMsg.textContent = validInput + "month";
+        monthLabel.style.color = "hsl(0, 100%, 67%)";
         monthValid = false;
     } else {
         monthValid = true;
         monthInputErrorMsg.style.display = "none";  // hide error message
+        monthLabel.style.color = "hsl(0, 1%, 44%)";
     }
 
     // year validation
     if (yearInput.value === "") {
         yearInputErrorMsg.style.display = "block";
         yearInputErrorMsg.textContent = fieldRequiredText;
+        yearLabel.style.color = "hsl(0, 100%, 67%)";
         yearValid = false;
     } else if (yearInput.value > 2025 || yearInput.value < 1) {
         yearInputErrorMsg.style.display = "block";
         yearInputErrorMsg.textContent = validInput + "year";
+        yearLabel.style.color = "hsl(0, 100%, 67%)";
         yearValid = false;
     } else {
         yearValid = true;
         yearInputErrorMsg.style.display = "none";  // hide error message
+        yearLabel.style.color = "hsl(0, 1%, 44%)";
     }
 
 
